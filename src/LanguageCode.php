@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * List of 217 language codes: ISO 639-1.
  * 
@@ -8,9 +8,9 @@
  * @author     Josantonius - info@josantonius.com
  * @copyright  Copyright (c) 2017 JST PHP Framework
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @version    1.0.0
+ * @version    1.1.0
  * @link       https://github.com/Josantonius/PHP-LanguageCode
- * @since      File available since 1.0.0 - Update: 2017-01-12
+ * @since      File available since 1.0.0 - Update: 2017-01-30
  */
 
 namespace Josantonius\LanguageCode;
@@ -40,7 +40,7 @@ class LanguageCode {
      *
      * @return array → language code
      */
-    protected static function load(): array {
+    protected static function load() {
 
         if (is_null(static::$lamguageCodes)) {
 
@@ -67,11 +67,16 @@ class LanguageCode {
      *
      * @return string              → country name
      */
-    public static function getLanguageFromCode(string $languageCode): string {
+    public static function getLanguageFromCode($languageCode) {
 
         static::load();
 
-        return static::$lamguageCodes[$languageCode] ?? "undefined";
+        if (!isset(static::$lamguageCodes[$languageCode])) {
+
+            static::$lamguageCodes[$languageCode] = "undefined";
+        }
+
+        return static::$lamguageCodes[$languageCode];
     }
 
     /**
@@ -83,7 +88,7 @@ class LanguageCode {
      *
      * @return string          → language code
      */
-    public static function getCodeFromLanguage(string $language): string {
+    public static function getCodeFromLanguage($language) {
 
         static::load();
 
@@ -102,7 +107,7 @@ class LanguageCode {
      *
      * @return array → language codes and language names
      */
-    public static function getAll(): array {
+    public static function getAll() {
         
         return static::load();
     }
