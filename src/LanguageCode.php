@@ -36,7 +36,7 @@ class LanguageCode {
      */
     protected static function load() {
 
-        if (is_null(static::$lamguageCodes)) {
+        if (is_null(self::$lamguageCodes)) {
 
             $filepath = __DIR__ . '/resources/languageCodes.jsond';
 
@@ -44,12 +44,12 @@ class LanguageCode {
 
             $lamguageCodes = json_decode($jsonFile, true);
 
-            static::$lamguageCodes = $lamguageCodes['data'];
+            self::$lamguageCodes = $lamguageCodes['data'];
 
             unset($lamguageCodes);
         }
 
-        return static::$lamguageCodes;
+        return self::$lamguageCodes;
     }
 
     /**
@@ -63,14 +63,14 @@ class LanguageCode {
      */
     public static function getLanguageFromCode($languageCode) {
 
-        static::load();
+        self::load();
 
-        if (!isset(static::$lamguageCodes[$languageCode])) {
+        if (!isset(self::$lamguageCodes[$languageCode])) {
 
-            static::$lamguageCodes[$languageCode] = 'undefined';
+            self::$lamguageCodes[$languageCode] = 'undefined';
         }
 
-        return static::$lamguageCodes[$languageCode];
+        return self::$lamguageCodes[$languageCode];
     }
 
     /**
@@ -84,9 +84,9 @@ class LanguageCode {
      */
     public static function getCodeFromLanguage($language) {
 
-        static::load();
+        self::load();
 
-        if ($index = array_search(ucfirst($language), static::$lamguageCodes)) {
+        if ($index = array_search(ucfirst($language), self::$lamguageCodes)) {
 
             return $index;
         }
@@ -103,6 +103,6 @@ class LanguageCode {
      */
     public static function getAll() {
         
-        return static::load();
+        return self::load();
     }
 }
