@@ -14,11 +14,20 @@ Lista de 217 códigos de idioma: ISO 639-1.
 - [Métodos disponibles](#métodos-disponibles)
 - [Uso](#uso)
 - [Tests](#tests)
-- [Manejador de excepciones](#manejador-de-excepciones)
 - [Contribuir](#contribuir)
 - [Repositorio](#repositorio)
 - [Licencia](#licencia)
 - [Copyright](#copyright)
+
+---
+
+<p align="center"><strong>Echa un vistazo al código</strong></p>
+
+<p align="center">
+  <a href="" title="Echa un vistazo al código">
+    <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
+  </a>
+</p>
 
 ---
 
@@ -126,9 +135,6 @@ LanguageCodeTest::testGetCodeFromLanguageUndefined();
 LanguageCodeTest::testGetAll();
 ```
 
-### Manejador de excepciones
-
-Esta librería utiliza [control de excepciones](src/Exception) que puedes personalizar a tu gusto.
 ### Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
 1. Bifurca la rama del repositorio en GitHub para iniciar la operación de ajuste.

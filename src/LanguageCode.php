@@ -11,8 +11,6 @@
 
 namespace Josantonius\LanguageCode;
 
-# use Josantonius\LanguageCode\Exception\LanguageCodeException;
-
 /**
  * Language code handler.
  *
@@ -40,7 +38,7 @@ class LanguageCode {
 
         if (is_null(static::$lamguageCodes)) {
 
-            $filepath = __DIR__ . "/resources/languageCodes.jsond";
+            $filepath = __DIR__ . '/resources/languageCodes.jsond';
 
             $jsonFile  = file_get_contents($filepath);
 
@@ -59,7 +57,7 @@ class LanguageCode {
      *
      * @since 1.0.0
      *
-     * @param string $languageCode → language code, e.g. "es"
+     * @param string $languageCode → language code, e.g. 'es'
      *
      * @return string              → country name
      */
@@ -69,7 +67,7 @@ class LanguageCode {
 
         if (!isset(static::$lamguageCodes[$languageCode])) {
 
-            static::$lamguageCodes[$languageCode] = "undefined";
+            static::$lamguageCodes[$languageCode] = 'undefined';
         }
 
         return static::$lamguageCodes[$languageCode];
@@ -80,7 +78,7 @@ class LanguageCode {
      *
      * @since 1.0.0
      *
-     * @param string $language → language name, e.g. "Spanish"
+     * @param string $language → language name, e.g. 'Spanish'
      *
      * @return string          → language code
      */
@@ -93,7 +91,7 @@ class LanguageCode {
             return $index;
         }
 
-        return "undefined";
+        return 'undefined';
     }
 
     /**
