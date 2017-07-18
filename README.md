@@ -24,7 +24,7 @@ List of 217 language codes: ISO 639-1.
 <p align="center"><strong>Take a look at the code</strong></p>
 
 <p align="center">
-  <a href="" title="Take a look at the code">
+  <a href="https://youtu.be/sv0M1dmgXxE" title="Take a look at the code">
     <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
   </a>
 </p>

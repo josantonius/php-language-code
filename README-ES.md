@@ -24,7 +24,7 @@ Lista de 217 códigos de idioma: ISO 639-1.
 <p align="center"><strong>Echa un vistazo al código</strong></p>
 
 <p align="center">
-  <a href="" title="Echa un vistazo al código">
+  <a href="https://youtu.be/sv0M1dmgXxE" title="Echa un vistazo al código">
     <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
   </a>
 </p>
@@ -53,7 +53,7 @@ Esta ĺibrería es soportada por versiones de PHP 5.6 o superiores y es compatib
 
 ### Cómo empezar y ejemplos
 
-Para utilizar esta librería, simplemente:
+Para utilizar esta biblioteca, simplemente:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
@@ -62,7 +62,7 @@ use Josantonius\LanguageCode\LanguageCode;
 ```
 ### Métodos disponibles
 
-Métodos disponibles en esta librería:
+Métodos disponibles en esta biblioteca:
 
 ```php
 LanguageCode::getLanguageFromCode();
@@ -71,7 +71,7 @@ LanguageCode::getAll();
 ```
 ### Uso
 
-Ejemplo de uso para esta librería:
+Ejemplo de uso para esta biblioteca:
 
 ```php
 <?php
@@ -125,7 +125,7 @@ $loader->addPsr4('Josantonius\\LanguageCode\\Tests\\', __DIR__ . '/vendor/josant
 
 use Josantonius\LanguageCode\Tests\LanguageCodeTest;
 ```
-Métodos de prueba disponibles en esta librería:
+Métodos de prueba disponibles en esta biblioteca:
 
 ```php
 LanguageCodeTest::testGetLanguageFromCode();
