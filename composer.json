@@ -1,6 +1,6 @@
 {
     "name":        "josantonius/languagecode",
-    "version":     "1.1.2",
+    "version":     "1.1.3",
     "type":        "library",
     "description": "List of 217 language codes: ISO 639-1.",
     "keywords": [
@@ -20,6 +20,8 @@
         }
     ],
     "support": {
+        "issues": "https://github.com/josantonius/php-languagecode/issues",
+        "forum":  "http://stackoverflow.com/tags/josantonius/php-languagecode",
         "source": "https://github.com/josantonius/php-languagecode"
     },
     "config": {
@@ -29,19 +31,20 @@
     "require": {
         "php": "^5.6 || ^7.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "5.7.*"
+    },
     "autoload": {
         "psr-4": {
-            "Josantonius\\LanguageCode\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Josantonius\\LanguageCode\\Tests\\": "tests/"
+            "Josantonius\\LanguageCode\\": "src/LanguageCode/"
         }
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }

@@ -1,6 +1,6 @@
 # PHP LanguageCode library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/languagecode/v/stable)](https://packagist.org/packages/josantonius/languagecode) [![Total Downloads](https://poser.pugx.org/josantonius/languagecode/downloads)](https://packagist.org/packages/josantonius/languagecode) [![Latest Unstable Version](https://poser.pugx.org/josantonius/languagecode/v/unstable)](https://packagist.org/packages/josantonius/languagecode) [![License](https://poser.pugx.org/josantonius/languagecode/license)](https://packagist.org/packages/josantonius/languagecode)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/languagecode/v/stable)](https://packagist.org/packages/josantonius/languagecode) [![Total Downloads](https://poser.pugx.org/josantonius/languagecode/downloads)](https://packagist.org/packages/josantonius/languagecode) [![Latest Unstable Version](https://poser.pugx.org/josantonius/languagecode/v/unstable)](https://packagist.org/packages/josantonius/languagecode) [![License](https://poser.pugx.org/josantonius/languagecode/license)](https://packagist.org/packages/josantonius/languagecode) [![Travis](https://travis-ci.org/Josantonius/PHP-LanguageCode.svg)](https://travis-ci.org/Josantonius/PHP-LanguageCode)
 
 [Spanish version](README-ES.md)
 
@@ -18,16 +18,6 @@ Lista de 217 códigos de idioma: ISO 639-1.
 - [Repositorio](#repositorio)
 - [Licencia](#licencia)
 - [Copyright](#copyright)
-
----
-
-<p align="center"><strong>Echa un vistazo al código</strong></p>
-
-<p align="center">
-  <a href="https://youtu.be/sv0M1dmgXxE" title="Echa un vistazo al código">
-    <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
-  </a>
-</p>
 
 ---
 
@@ -115,25 +105,13 @@ array(217) {
 
 ### Tests 
 
-Para utilizar la clase de [pruebas](tests), simplemente:
+Para ejecutar las [pruebas](tests/LanguageCode/test) simplemente:
 
-```php
-<?php
-$loader = require __DIR__ . '/vendor/autoload.php';
+    $ git clone https://github.com/Josantonius/PHP-LanguageCode.git
+    
+    $ cd PHP-LanguageCode
 
-$loader->addPsr4('Josantonius\\LanguageCode\\Tests\\', __DIR__ . '/vendor/josantonius/languagecode/tests');
-
-use Josantonius\LanguageCode\Tests\LanguageCodeTest;
-```
-Métodos de prueba disponibles en esta biblioteca:
-
-```php
-LanguageCodeTest::testGetLanguageFromCode();
-LanguageCodeTest::testGetLanguageFromCodeUndefined();
-LanguageCodeTest::testGetCodeFromLanguage();
-LanguageCodeTest::testGetCodeFromLanguageUndefined();
-LanguageCodeTest::testGetAll();
-```
+    $ phpunit
 
 ### Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
