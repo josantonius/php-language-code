@@ -6,20 +6,21 @@
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
+         strict="true"
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="tests/bootstrap.php"
->
+         bootstrap="vendor/autoload.php">
+
     <testsuites>
-        <testsuite name="LanguageCode Test Suite">
-            <directory>tests/LanguageCode</directory>
+        <testsuite name="Test Suite">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>src/LanguageCode</directory>
+            <directory>src</directory>
         </whitelist>
     </filter>
 </phpunit>

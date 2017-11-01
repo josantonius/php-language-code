@@ -1,5 +1,37 @@
 # CHANGELOG
 
+## 1.1.4 - 2017-11-01
+
+* Implemented `PSR-4 autoloader standard` from all library files.
+
+* Implemented `PSR-2 coding standard` from all library PHP files.
+
+* Implemented `PHPCS` to ensure that PHP code complies with `PSR2` code standards.
+
+* Implemented `Codacy` to automates code reviews and monitors code quality over time.
+
+* Implemented `Codecov` to coverage reports.
+
+* Added `LanguageCode/phpcs.ruleset.xml` file.
+
+* Deleted `LanguageCode/src/bootstrap.php` file.
+
+* Deleted `LanguageCode/tests/bootstrap.php` file.
+
+* Deleted `LanguageCode/vendor` folder.
+
+* Deleted `LanguageCode/resources/languageCodes.jsond` file.
+
+* Changed `Josantonius\LanguageCode\Test\LanguageCodeTest` class to  `Josantonius\LanguageCode\LanguageCodeTest` class.
+
+* Added `Josantonius\LanguageCode\LanguageCodeCollection` class.
+* Added `Josantonius\LanguageCode\LanguageCodeCollection::all()` method.
+* Added `Josantonius\LanguageCode\LanguageCodeCollection::get()` method.
+
+* Deleted `Josantonius\LanguageCode\LanguageCode::getAll()` method.
+
+* Added `Josantonius\LanguageCode\LanguageCode::get()` method.
+
 ## 1.1.3 - 2017-09-14
 
 * Unit tests supported by `PHPUnit` were added.
