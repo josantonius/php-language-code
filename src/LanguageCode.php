@@ -8,7 +8,6 @@
  * @link      https://github.com/Josantonius/PHP-LanguageCode
  * @since     1.0.0
  */
-
 namespace Josantonius\LanguageCode;
 
 /**
@@ -18,7 +17,6 @@ namespace Josantonius\LanguageCode;
  */
 class LanguageCode
 {
-
     /**
      * Get all language codes as array.
      *
@@ -56,6 +54,6 @@ class LanguageCode
      */
     public static function getCodeFromLanguage($languageName)
     {
-        return array_search($languageName, LanguageCodeCollection::all());
+        return array_search($languageName, LanguageCodeCollection::all(), true);
     }
 }
