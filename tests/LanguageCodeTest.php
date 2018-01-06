@@ -60,7 +60,7 @@ class LanguageCodeTest extends TestCase
 
         $this->assertContains(
             'Spanish',
-            $this->LanguageCode->getLanguageFromCode('es')
+            $languageCode::getLanguageFromCode('es')
         );
     }
 
@@ -72,7 +72,7 @@ class LanguageCodeTest extends TestCase
         $languageCode = $this->LanguageCode;
 
         $this->assertFalse(
-            $this->LanguageCode->getLanguageFromCode('abcd')
+            $languageCode::getLanguageFromCode('abcd')
         );
     }
 
@@ -85,7 +85,7 @@ class LanguageCodeTest extends TestCase
 
         $this->assertContains(
             'es',
-            $this->LanguageCode->getCodeFromLanguage('Spanish')
+            $languageCode::getCodeFromLanguage('Spanish')
         );
     }
 
@@ -97,7 +97,7 @@ class LanguageCodeTest extends TestCase
         $languageCode = $this->LanguageCode;
 
         $this->assertFalse(
-            $this->LanguageCode->getCodeFromLanguage('abcd')
+            $languageCode::getCodeFromLanguage('abcd')
         );
     }
 
@@ -110,7 +110,7 @@ class LanguageCodeTest extends TestCase
 
         $this->assertInternalType(
             'array',
-            $this->LanguageCode->get()
+            $languageCode::get()
         );
     }
 }
