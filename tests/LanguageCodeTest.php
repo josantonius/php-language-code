@@ -3,7 +3,7 @@
  * List of 217 language codes: ISO 639-1.
  *
  * @author    Josantonius <hello@josantonius.com>
- * @copyright 2016 - 2017 (c) Josantonius - PHP-LanguageCode
+ * @copyright 2017 - 2018 (c) Josantonius - PHP-LanguageCode
  * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link      https://github.com/Josantonius/PHP-LanguageCode
  * @since     1.1.3
@@ -14,8 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Tests class for LanguageCode library.
- *
- * @since 1.1.3
  */
 class LanguageCodeTest extends TestCase
 {
@@ -47,17 +45,19 @@ class LanguageCodeTest extends TestCase
      */
     public function testIsInstanceOfLanguageCode()
     {
-        $actual = $this->LanguageCode;
-        $this->assertInstanceOf('Josantonius\LanguageCode\LanguageCode', $actual);
+        $this->assertInstanceOf(
+            'Josantonius\LanguageCode\LanguageCode',
+            $this->LanguageCode
+        );
     }
 
     /**
      * Get language name from language code.
-     *
-     * @since 1.1.3
      */
     public function testGetLanguageFromCode()
     {
+        $languageCode = $this->LanguageCode;
+
         $this->assertContains(
             'Spanish',
             $this->LanguageCode->getLanguageFromCode('es')
@@ -66,11 +66,11 @@ class LanguageCodeTest extends TestCase
 
     /**
      * Getting a language name wrong.
-     *
-     * @since 1.1.3
      */
     public function testGetLanguageFromCodeUndefined()
     {
+        $languageCode = $this->LanguageCode;
+
         $this->assertFalse(
             $this->LanguageCode->getLanguageFromCode('abcd')
         );
@@ -78,11 +78,11 @@ class LanguageCodeTest extends TestCase
 
     /**
      * Get language code from language name
-     *
-     * @since 1.1.3
      */
     public function testGetCodeFromLanguage()
     {
+        $languageCode = $this->LanguageCode;
+
         $this->assertContains(
             'es',
             $this->LanguageCode->getCodeFromLanguage('Spanish')
@@ -91,11 +91,11 @@ class LanguageCodeTest extends TestCase
 
     /**
      * Getting a language code wrong.
-     *
-     * @since 1.1.3
      */
     public function testGetCodeFromLanguageUndefined()
     {
+        $languageCode = $this->LanguageCode;
+
         $this->assertFalse(
             $this->LanguageCode->getCodeFromLanguage('abcd')
         );
@@ -103,11 +103,11 @@ class LanguageCodeTest extends TestCase
 
     /**
      * Get all language codes as array.
-     *
-     * @since 1.1.3
      */
     public function testGetAll()
     {
+        $languageCode = $this->LanguageCode;
+
         $this->assertInternalType(
             'array',
             $this->LanguageCode->get()

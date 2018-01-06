@@ -3,7 +3,7 @@
  * List of 217 language codes: ISO 639-1.
  *
  * @author    Josantonius <hello@josantonius.com>
- * @copyright 2016 - 2017 (c) Josantonius - PHP-LanguageCode
+ * @copyright 2017 - 2018 (c) Josantonius - PHP-LanguageCode
  * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link      https://github.com/Josantonius/PHP-LanguageCode
  * @since     1.1.4
@@ -14,15 +14,11 @@ namespace Josantonius\LanguageCode;
  * Language code handler.
  *
  * Compiled from https://wikipedia.org/wiki/List_of_ISO_639-1_codes
- *
- * @since 1.1.4
  */
 class LanguageCodeCollection
 {
     /**
      * List of language codes.
-     *
-     * @since 1.1.4
      *
      * @var array
      */
@@ -249,8 +245,6 @@ class LanguageCodeCollection
     /**
      * Returns all language codes.
      *
-     * @since 1.1.4
-     *
      * @return array
      */
     public static function all()
@@ -260,8 +254,6 @@ class LanguageCodeCollection
 
     /**
      * Return language name from language code.
-     *
-     * @since 1.1.4
      *
      * @param string $key
      *
