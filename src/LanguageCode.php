@@ -1,13 +1,14 @@
 <?php
-/**
- * List of 217 language codes: ISO 639-1.
- *
- * @author    Josantonius <hello@josantonius.com>
- * @copyright 2017 - 2018 (c) Josantonius - PHP-LanguageCode
- * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @link      https://github.com/Josantonius/PHP-LanguageCode
- * @since     1.0.0
- */
+
+/*
+* This file is part of https://github.com/josantonius/php-language-code repository.
+*
+* (c) Josantonius <hello@josantonius.dev>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
 namespace Josantonius\LanguageCode;
 
 /**
@@ -17,35 +18,25 @@ class LanguageCode
 {
     /**
      * Get all language codes as array.
-     *
-     * @return array → language codes and language names
      */
-    public static function get()
+    public static function all(): array
     {
         return LanguageCodeCollection::all();
     }
 
     /**
-     * Get language name from language code.
-     *
-     * @param string $languageCode → language code, e.g. 'es'
-     *
-     * @return tring|false → country name
+     * Get language code from language name.
      */
-    public static function getLanguageFromCode($languageCode)
+    public static function getCode(string $languageName): ?string
     {
-        return LanguageCodeCollection::get($languageCode) ?: false;
+        return LanguageCodeCollection::getCode($languageName);
     }
 
     /**
-     * Get language code from language name.
-     *
-     * @param string $languageName → language name, e.g. 'Spanish'
-     *
-     * @return tring|false → language code
+     * Get language name from language code.
      */
-    public static function getCodeFromLanguage($languageName)
+    public static function getName(string $languageCode): ?string
     {
-        return array_search($languageName, LanguageCodeCollection::all(), true);
+        return LanguageCodeCollection::getName($languageCode);
     }
 }
