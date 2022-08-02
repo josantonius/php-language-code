@@ -1,116 +1,64 @@
 <?php
-/**
- * List of 217 language codes: ISO 639-1.
- *
- * @author    Josantonius <hello@josantonius.com>
- * @copyright 2017 - 2018 (c) Josantonius - PHP-LanguageCode
- * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @link      https://github.com/Josantonius/PHP-LanguageCode
- * @since     1.1.3
- */
-namespace Josantonius\LanguageCode;
+
+/*
+* This file is part of https://github.com/josantonius/php-language-code repository.
+*
+* (c) Josantonius <hello@josantonius.dev>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
+namespace Josantonius\LanguageCode\Tests;
 
 use PHPUnit\Framework\TestCase;
+use Josantonius\LanguageCode\LanguageCode;
+use Josantonius\LanguageCode\LanguageCodeCollection;
 
-/**
- * Tests class for LanguageCode library.
- */
 class LanguageCodeTest extends TestCase
 {
-    /**
-     * LanguageCode instance.
-     *
-     * @since 1.1.5
-     *
-     * @var object
-     */
-    protected $LanguageCode;
+    protected $languageCode;
 
-    /**
-     * Set up.
-     *
-     * @since 1.1.5
-     */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
-        $this->LanguageCode = new LanguageCode;
+        $this->collection   = new LanguageCodeCollection();
+        $this->languageCode = new LanguageCode();
     }
 
-    /**
-     * Check if it is an instance of LanguageCode.
-     *
-     * @since 1.1.5
-     */
-    public function testIsInstanceOfLanguageCode()
+    public function testShouldGetAllLanguageCodes(): void
     {
-        $this->assertInstanceOf(
-            'Josantonius\LanguageCode\LanguageCode',
-            $this->LanguageCode
-        );
+        $this->assertNotEmpty($this->languageCode->all());
+
+        $this->assertNotEmpty($this->collection->all());
     }
 
-    /**
-     * Get language name from language code.
-     */
-    public function testGetLanguageFromCode()
+    public function testShouldGetLanguageCodeFromLanguageName(): void
     {
-        $languageCode = $this->LanguageCode;
+        $this->assertSame('es', $this->languageCode->getCode('Spanish'));
 
-        $this->assertContains(
-            'Spanish',
-            $languageCode::getLanguageFromCode('es')
-        );
+        $this->assertSame('es', $this->collection->getCode('Spanish'));
     }
 
-    /**
-     * Getting a language name wrong.
-     */
-    public function testGetLanguageFromCodeUndefined()
+    public function testShouldReturnNullWithUnknownLanguageName(): void
     {
-        $languageCode = $this->LanguageCode;
+        $this->assertNull($this->languageCode->getCode('foo'));
 
-        $this->assertFalse(
-            $languageCode::getLanguageFromCode('abcd')
-        );
+        $this->assertNull($this->collection->getCode('foo'));
     }
 
-    /**
-     * Get language code from language name
-     */
-    public function testGetCodeFromLanguage()
+    public function testShouldGetLanguageNameFromLanguageCode(): void
     {
-        $languageCode = $this->LanguageCode;
+        $this->assertSame('Spanish', $this->languageCode->getName('es'));
 
-        $this->assertContains(
-            'es',
-            $languageCode::getCodeFromLanguage('Spanish')
-        );
+        $this->assertSame('Spanish', $this->collection->getName('es'));
     }
 
-    /**
-     * Getting a language code wrong.
-     */
-    public function testGetCodeFromLanguageUndefined()
+    public function testShouldReturnNullWithUnknownLanguageCode(): void
     {
-        $languageCode = $this->LanguageCode;
+        $this->assertNull($this->languageCode->getName('bar'));
 
-        $this->assertFalse(
-            $languageCode::getCodeFromLanguage('abcd')
-        );
-    }
-
-    /**
-     * Get all language codes as array.
-     */
-    public function testGetAll()
-    {
-        $languageCode = $this->LanguageCode;
-
-        $this->assertInternalType(
-            'array',
-            $languageCode::get()
-        );
+        $this->assertNull($this->collection->getName('bar'));
     }
 }

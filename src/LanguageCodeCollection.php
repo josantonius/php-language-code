@@ -1,28 +1,24 @@
 <?php
-/**
- * List of 217 language codes: ISO 639-1.
- *
- * @author    Josantonius <hello@josantonius.com>
- * @copyright 2017 - 2018 (c) Josantonius - PHP-LanguageCode
- * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @link      https://github.com/Josantonius/PHP-LanguageCode
- * @since     1.1.4
- */
+
+/*
+* This file is part of https://github.com/josantonius/php-language-code repository.
+*
+* (c) Josantonius <hello@josantonius.dev>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
 namespace Josantonius\LanguageCode;
 
 /**
- * Language code handler.
+ * Language code collection.
  *
- * Compiled from https://wikipedia.org/wiki/List_of_ISO_639-1_codes
+ * Compiled from https://wikipedia.org/wiki/List_of_ISO_639-1_codes.
  */
 class LanguageCodeCollection
 {
-    /**
-     * List of language codes.
-     *
-     * @var array
-     */
-    protected static $data = [
+    protected static array $data = [
         'aa' => 'Afar',
         'ab' => 'Abkhazian',
         'af' => 'Afrikaans',
@@ -36,7 +32,7 @@ class LanguageCodeCollection
         'ar-jo' => 'Arabic (Jordan)',
         'ar-kw' => 'Arabic (Kuwait)',
         'ar-lb' => 'Arabic (Lebanon)',
-        'ar-ly' => 'Arabic (libya)',
+        'ar-ly' => 'Arabic (Libya)',
         'ar-ma' => 'Arabic (Morocco)',
         'ar-om' => 'Arabic (Oman)',
         'ar-qa' => 'Arabic (Qatar)',
@@ -46,7 +42,7 @@ class LanguageCodeCollection
         'ar-ye' => 'Arabic (Yemen)',
         'as' => 'Assamese',
         'ay' => 'Aymara',
-        'az' => 'Azeri',
+        'az' => 'Azerí',
         'ba' => 'Bashkir',
         'be' => 'Belarusian',
         'bg' => 'Bulgarian',
@@ -243,28 +239,26 @@ class LanguageCodeCollection
     ];
 
     /**
-     * Returns all language codes.
-     *
-     * @return array
+     * Get all language codes as array.
      */
-    public static function all()
+    public static function all(): array
     {
-        return static::$data;
+        return self::$data;
     }
 
     /**
-     * Return language name from language code.
-     *
-     * @param string $key
-     *
-     * @return string|null → language code or null
+     * Get language code from language name.
      */
-    public static function get($key)
+    public static function getCode(string $languageName): ?string
     {
-        if (isset(static::$data[$key])) {
-            return static::$data[$key];
-        }
+        return array_search($languageName, self::$data) ?: null;
+    }
 
-        return null;
+    /**
+     * Get language name from language code.
+     */
+    public static function getName(string $languageCode): ?string
+    {
+        return self::$data[$languageCode] ?? null;
     }
 }

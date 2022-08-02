@@ -1,10 +1,17 @@
 # PHP LanguageCode library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/LanguageCode/v/stable)](https://packagist.org/packages/josantonius/LanguageCode) [![Latest Unstable Version](https://poser.pugx.org/josantonius/LanguageCode/v/unstable)](https://packagist.org/packages/josantonius/LanguageCode) [![License](https://poser.pugx.org/josantonius/LanguageCode/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5e3ca0b3edd2415d92d2262afb491d47)](https://www.codacy.com/app/Josantonius/PHP-LanguageCode?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/PHP-LanguageCode&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/josantonius/LanguageCode/downloads)](https://packagist.org/packages/josantonius/LanguageCode) [![Travis](https://travis-ci.org/Josantonius/PHP-LanguageCode.svg)](https://travis-ci.org/Josantonius/PHP-LanguageCode) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![CodeCov](https://codecov.io/gh/Josantonius/PHP-LanguageCode/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/PHP-LanguageCode)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/language-code/v/stable)](https://packagist.org/packages/josantonius/language-code)
+[![License](https://poser.pugx.org/josantonius/language-code/license)](LICENSE)
+[![Total Downloads](https://poser.pugx.org/josantonius/language-code/downloads)](https://packagist.org/packages/josantonius/language-code)
+[![CI](https://github.com/josantonius/php-language-code/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/josantonius/php-language-code/actions/workflows/ci.yml)
+[![CodeCov](https://codecov.io/gh/josantonius/php-language-code/branch/main/graph/badge.svg)](https://codecov.io/gh/josantonius/php-language-code)
+[![PSR1](https://img.shields.io/badge/PSR-1-f57046.svg)](https://www.php-fig.org/psr/psr-1/)
+[![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](https://www.php-fig.org/psr/psr-4/)
+[![PSR12](https://img.shields.io/badge/PSR-12-1abc9c.svg)](https://www.php-fig.org/psr/psr-12/)
 
-[Versión en español](README-ES.md)
+**Translations**: [Español](.github/lang/es-ES/README.md)
 
-List of 217 language codes: ISO 639-1.
+PHP library to get language name from code.
 
 ---
 
@@ -15,11 +22,11 @@ List of 217 language codes: ISO 639-1.
 - [Usage](#usage)
 - [List in JSON format](#list-in-json-format)
 - [Tests](#tests)
-- [TODO](#-todo)
-- [Contribute](#contribute)
-- [Repository](#repository)
+- [TODO](#todo)
+- [Changelog](#changelog)
+- [Contribution](#contribution)
+- [Sponsor](#Sponsor)
 - [License](#license)
-- [Copyright](#copyright)
 
 ---
 
@@ -33,146 +40,201 @@ The preferred way to install this extension is through [Composer](http://getcomp
 
 To install **PHP LanguageCode library**, simply:
 
-    $ composer require Josantonius/LanguageCode
+```console
+composer require josantonius/language-code
+```
 
 The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
 
-    $ composer require Josantonius/LanguageCode --prefer-source
+```console
+composer require josantonius/language-code --prefer-source
+```
 
 You can also **clone the complete repository** with Git:
 
-  $ git clone https://github.com/Josantonius/PHP-LanguageCode.git
-
-Or **install it manually**:
-
-Download [LanguageCode.php](https://raw.githubusercontent.com/Josantonius/PHP-LanguageCode/master/src/LanguageCode.php) and [LanguageCodeCollection.php](https://raw.githubusercontent.com/Josantonius/PHP-LanguageCode/master/src/LanguageCodeCollection.php):
-
-    $ wget https://raw.githubusercontent.com/Josantonius/PHP-LanguageCode/master/src/LanguageCode.php
-    $ wget https://raw.githubusercontent.com/Josantonius/PHP-LanguageCode/master/src/LanguageCodeCollection.php
+```console
+clone https://github.com/josantonius/php-language-code.git
+```
 
 ## Available Methods
 
 Available methods in this library:
 
-### - Get all language codes as array:
+### Get all language codes as array
 
 ```php
-LanguageCode::get();
+$languageCode->all(): array
 ```
 
-**# Return** (array) → language codes and language names
-
-### - Get language name from language code:
+### Get language code from language name
 
 ```php
-LanguageCode::getLanguageFromCode($languageCode);
+$languageCode->getCode(string $languageName): string|null
 ```
 
-| Attribute | Description | Type | Required | Default
-| --- | --- | --- | --- | --- |
-| $languageCode | Language code, e.g. 'es'. | string | Yes | |
-
-**# Return** (tring|false) → country name
-
-### - Get language code from language name:
+### Get language name from language code
 
 ```php
-LanguageCode::getCodeFromLanguage($languageName);
+$languageCode->getName(string $languageCode): string|null
 ```
-
-| Attribute | Description | Type | Required | Default
-| --- | --- | --- | --- | --- |
-| $languageName | Language name, e.g. 'Spanish'. | string | Yes | |
-
-**# Return** (tring|false) → language code
 
 ## Quick Start
 
-To use this library with **Composer**:
+To use this library:
+
+### Using Objects
 
 ```php
-require __DIR__ . '/vendor/autoload.php';
-
 use Josantonius\LanguageCode\LanguageCode;
+
+$languageCode = new LanguageCode();
 ```
 
-Or If you installed it **manually**, use it:
+### Using Static Collection
+
+Alternatively you can use the collection to access the methods statically:
 
 ```php
-require_once __DIR__ . '/LanguageCode.php';
-require_once __DIR__ . '/LanguageCodeCollection.php';
-
-use Josantonius\LanguageCode\LanguageCode;
+use Josantonius\LanguageCode\LanguageCodeCollection;
 ```
 
 ## Usage
 
 Example of use for this library:
 
+### - Get all language codes as array
+
+[Using objects](#using-objects):
+
+```php
+$languageCode->all();
+```
+
+[Using the static collection](#using-static-collection):
+
+```php
+LanguageCodeCollection::all();
+```
+
+Result:
+
+```php
+[
+    'aa' => 'Afar',
+    'ab' => 'Abkhazian',
+    'af' => 'Afrikaans',
+    'am' => 'Amharic',
+    'ar' => 'Arabic',
+    'ar-ae' => 'Arabic (U.A.E.)',
+    'ar-bh' => 'Arabic (Bahrain)',
+    'ar-dz' => 'Arabic (Algeria)',
+    'ar-eg' => 'Arabic (Egypt)',
+    'ar-iq' => 'Arabic (Iraq)',
+    (...)
+]
+```
+
+### - Get language code from language name
+
+[Using objects](#using-objects):
+
+```php
+$languageCode->getCode('Spanish'); // es
+```
+
+[Using the static collection](#using-static-collection):
+
+```php
+LanguageCodeCollection::getCode('Turkish'); // tr
+```
+
+### - Get language name from language code
+
+[Using objects](#using-objects):
+
+```php
+$languageCode->getName('eo'); // Esperanto
+```
+
+[Using the static collection](#using-static-collection):
+
+```php
+LanguageCodeCollection::getName('de'); // German
+```
+
 ## List in JSON format
 
-[Go to the resource](https://gist.github.com/Josantonius/0a889ab6f18db2fcefda15a039613293).
+[Go to the resource](https://gist.github.com/josantonius/b455e315bc7f790d14b136d61d9ae469).
 
-## Tests 
+## Tests
 
-To run [tests](tests) you just need [composer](http://getcomposer.org/download/) and to execute the following:
+To run [tests](tests) you just need [composer](http://getcomposer.org/download/)
+and to execute the following:
 
-    $ git clone https://github.com/Josantonius/PHP-LanguageCode.git
-    
-    $ cd PHP-LanguageCode
+```console
+git clone https://github.com/josantonius/php-language-code.git
+```
 
-    $ composer install
+```console
+cd php-language-code
+
+```
+
+```console
+composer install
+```
 
 Run unit tests with [PHPUnit](https://phpunit.de/):
 
-    $ composer phpunit
+```console
+composer phpunit
+```
 
-Run [PSR2](http://www.php-fig.org/psr/psr-2/) code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+Run code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
 
-    $ composer phpcs
+```console
+composer phpcs
+```
 
 Run [PHP Mess Detector](https://phpmd.org/) tests to detect inconsistencies in code style:
 
-    $ composer phpmd
+```console
+composer phpmd
+```
 
 Run all previous tests:
 
-    $ composer tests
+```console
+composer tests
+```
 
-## ☑ TODO
+## TODO
 
-- [ ] Add new feature.
-- [ ] Improve tests.
-- [ ] Improve documentation.
-- [ ] Refactor code for disabled code style rules. See [phpmd.xml](phpmd.xml) and [.php_cs.dist](.php_cs.dist).
+- [ ] Add new feature
+- [ ] Improve tests
+- [ ] Improve documentation
+- [ ] Improve English translation in the README file
+- [ ] Refactor code for disabled code style rules (see phpmd.xml and phpcs.xml)
 
-## Contribute
+## Changelog
 
-If you would like to help, please take a look at the list of
-[issues](https://github.com/Josantonius/PHP-LanguageCode/issues) or the [To Do](#-todo) checklist.
+Detailed changes for each release are documented in the
+[release notes](https://github.com/josantonius/php-language-code/releases).
 
-**Pull requests**
+## Contribution
 
-* [Fork and clone](https://help.github.com/articles/fork-a-repo).
-* Run the command `composer install` to install the dependencies.
-  This will also install the [dev dependencies](https://getcomposer.org/doc/03-cli.md#install).
-* Run the command `composer fix` to excute code standard fixers.
-* Run the [tests](#tests).
-* Create a **branch**, **commit**, **push** and send me a
-  [pull request](https://help.github.com/articles/using-pull-requests).
+Please make sure to read the [Contributing Guide](.github/CONTRIBUTING.md), before making a pull
+request, start a discussion or report a issue.
 
-## Repository
+Thanks to all [contributors](https://github.com/josantonius/php-language-code/graphs/contributors)! :heart:
 
-The file structure from this repository was created with [PHP-Skeleton](https://github.com/Josantonius/PHP-Skeleton).
+## Sponsor
+
+If this project helps you to reduce your development time,
+[you can sponsor me](https://github.com/josantonius#sponsor) to support my open source work :blush:
 
 ## License
 
-This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file for more info.
+This repository is licensed under the [MIT License](LICENSE).
 
-## Copyright
-
-2017 - 2018 Josantonius, [josantonius.com](https://josantonius.com/)
-
-If you find it useful, let me know :wink:
-
-You can contact me on [Twitter](https://twitter.com/Josantonius) or through my [email](mailto:hello@josantonius.com).
+Copyright © 2017-present, [Josantonius](https://github.com/josantonius#contact)
