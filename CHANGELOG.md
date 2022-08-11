@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v2.0.1](https://github.com/josantonius/php-language-code/releases/tag/v2.0.1) (2022-08-11)
+
+* Improved documentation.
+
 ## [v2.0.0](https://github.com/josantonius/php-language-code/releases/tag/v2.0.0) (2022-08-02)
 
 > Version 1.x is considered as deprecated and unsupported.
