@@ -17,8 +17,9 @@ Librería PHP para obtener el nombre del lenguaje a partir del código.
 
 - [Requisitos](#requisitos)
 - [Instalación](#instalación)
-- [Métodos disponibles](#métodos-disponibles)
-- [Cómo empezar](#cómo-empezar)
+- [Clases disponibles](#clases-disponibles)
+  - [Clase LanguageCode](#clase-languagecode)
+  - [Clase LanguageCodeCollection](#clase-languagecodecollection)
 - [Uso](#uso)
 - [Listado en formato JSON](#listado-en-formato-json)
 - [Tests](#tests)
@@ -44,7 +45,8 @@ Para instalar **PHP LanguageCode library**, simplemente escribe:
 composer require josantonius/language-code
 ```
 
-El comando anterior sólo instalará los archivos necesarios, si prefieres **descargar todo el código fuente** puedes utilizar:
+El comando anterior sólo instalará los archivos necesarios,
+si prefieres **descargar todo el código fuente** puedes utilizar:
 
 ```console
 composer require josantonius/language-code --prefer-source
@@ -56,64 +58,80 @@ También puedes **clonar el repositorio** completo con Git:
 clone https://github.com/josantonius/php-language-code.git
 ```
 
-## Métodos disponibles
+## Clases disponibles
 
-Métodos disponibles en esta biblioteca:
+### Clase LanguageCode
 
-### Obtener array con todos los códigos de idioma
+```php
+use Josantonius\LanguageCode\LanguageCode;
+```
+
+Crear objeto:
+
+```php
+$languageCode = new LanguageCode();
+```
+
+Obtener array con todos los códigos de idioma:
 
 ```php
 $languageCode->all(): array
 ```
 
-### Obtener código de idioma desde el nombre del idioma
+Obtener código de idioma desde el nombre del idioma:
 
 ```php
 $languageCode->getCode(string $languageName): string|null
 ```
 
-### Obtener el nombre del idioma desde código de idioma
+Obtener el nombre del idioma desde código de idioma:
 
 ```php
 $languageCode->getName(string $languageCode): string|null
 ```
 
-## Cómo empezar
-
-Para utilizar esta biblioteca, simplemente:
-
-### Utilizando objetos
-
-```php
-use Josantonius\LanguageCode\LanguageCode;
-
-$mimeType = new LanguageCode();
-```
-
-### Utilizando colección estática
-
-Alternativamente puedes utilizar la colección para acceder a los métodos estáticamente:
+### Clase LanguageCodeCollection
 
 ```php
 use Josantonius\LanguageCode\LanguageCodeCollection;
+```
+
+Obtener array con todos los códigos de idioma:
+
+```php
+LanguageCodeCollection::all(): array
+```
+
+Obtener código de idioma desde el nombre del idioma:
+
+```php
+LanguageCodeCollection::getCode(string $languageName): string|null
+```
+
+Obtener el nombre del idioma desde código de idioma:
+
+```php
+LanguageCodeCollection::getName(string $languageCode): string|null
 ```
 
 ## Uso
 
 Ejemplo de uso para esta biblioteca:
 
-### - Obtener array con todos los códigos de idioma
-
-[Utilizando objetos](#utilizando-objetos):
+### Obtener array con todos los códigos de idioma
 
 ```php
+use Josantonius\LanguageCode\LanguageCode;
+
+$languageCode = new LanguageCode();
+
 $languageCode->all();
 ```
 
-[Utilizando la colección estática](#utilizando-colección-estática):
-
 ```php
-MimeTypeCollection::all();
+use Josantonius\LanguageCode\LanguageCodeCollection;
+
+LanguageCodeCollection::all();
 ```
 
 Resultado:
@@ -134,31 +152,35 @@ Resultado:
 ]
 ```
 
-### - Obtener código de idioma desde el nombre del idioma
-
-[Utilizando objetos](#utilizando-objetos):
+### Obtener código de idioma desde el nombre del idioma
 
 ```php
+use Josantonius\LanguageCode\LanguageCode;
+
+$languageCode = new LanguageCode();
+
 $languageCode->getCode('Spanish'); // es
 ```
 
-[Utilizando la colección estática](#utilizando-colección-estática):
-
 ```php
+use Josantonius\LanguageCode\LanguageCodeCollection;
+
 LanguageCodeCollection::getCode('Turkish'); // tr
 ```
 
-### - Obtener el nombre del idioma desde código de idioma
-
-[Utilizando objetos](#utilizando-objetos):
+### Obtener el nombre del idioma desde código de idioma
 
 ```php
+use Josantonius\LanguageCode\LanguageCode;
+
+$languageCode = new LanguageCode();
+
 $languageCode->getName('eo'); // Esperanto
 ```
 
-[Utilizando la colección estática](#utilizando-colección-estática):
-
 ```php
+use Josantonius\LanguageCode\LanguageCodeCollection;
+
 LanguageCodeCollection::getName('de'); // German
 ```
 
@@ -217,14 +239,14 @@ composer tests
 ## Registro de Cambios
 
 Los cambios detallados de cada versión se documentan en las
-[notas de la misma](https://github.com/josantonius/XXXX/releases).
+[notas de la misma](https://github.com/josantonius/php-language-code/releases).
 
 ## Contribuir
 
 Por favor, asegúrate de leer la [Guía de contribución](CONTRIBUTING.md) antes de hacer un
 _pull request_, comenzar una discusión o reportar un _issue_.
 
-¡Gracias por [colaborar](https://github.com/josantonius/XXXX/graphs/contributors)! :heart:
+¡Gracias por [colaborar](https://github.com/josantonius/php-language-code/graphs/contributors)! :heart:
 
 ## Patrocinar
 
@@ -236,4 +258,4 @@ para apoyar mi trabajo :blush:
 
 Este repositorio tiene una licencia [MIT License](LICENSE).
 
-Copyright © XXXX, [Josantonius](https://github.com/josantonius/lang/es-ES/README.md#contacto)
+Copyright © 2017-actualidad, [Josantonius](https://github.com/josantonius/lang/es-ES/README.md#contacto)

@@ -17,8 +17,9 @@ PHP library to get language name from code.
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Available Methods](#available-methods)
-- [Quick Start](#quick-start)
+- [Available Classes](#available-classes)
+  - [LanguageCode Class](#languagecode-class)
+  - [LanguageCodeCollection Class](#languagecodecollection-class)
 - [Usage](#usage)
 - [List in JSON format](#list-in-json-format)
 - [Tests](#tests)
@@ -32,7 +33,7 @@ PHP library to get language name from code.
 
 ## Requirements
 
-This library is supported by **PHP versions 5.6** or higher and is compatible with **HHVM versions 3.0** or higher.
+This library is compatible with the PHP versions: 8.0 | 8.1.
 
 ## Installation
 
@@ -44,7 +45,8 @@ To install **PHP LanguageCode library**, simply:
 composer require josantonius/language-code
 ```
 
-The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
+The previous command will only install the necessary files,
+if you prefer to **download the entire source code** you can use:
 
 ```console
 composer require josantonius/language-code --prefer-source
@@ -56,63 +58,79 @@ You can also **clone the complete repository** with Git:
 clone https://github.com/josantonius/php-language-code.git
 ```
 
-## Available Methods
+## Available Classes
 
-Available methods in this library:
+### LanguageCode Class
 
-### Get all language codes as array
+```php
+use Josantonius\LanguageCode\LanguageCode;
+```
+
+Create object:
+
+```php
+$languageCode = new LanguageCode();
+```
+
+Get all language codes as array:
 
 ```php
 $languageCode->all(): array
 ```
 
-### Get language code from language name
+Get language code from language name:
 
 ```php
 $languageCode->getCode(string $languageName): string|null
 ```
 
-### Get language name from language code
+Get language name from language code:
 
 ```php
 $languageCode->getName(string $languageCode): string|null
 ```
 
-## Quick Start
-
-To use this library:
-
-### Using Objects
-
-```php
-use Josantonius\LanguageCode\LanguageCode;
-
-$languageCode = new LanguageCode();
-```
-
-### Using Static Collection
-
-Alternatively you can use the collection to access the methods statically:
+### LanguageCodeCollection Class
 
 ```php
 use Josantonius\LanguageCode\LanguageCodeCollection;
+```
+
+Get all language codes as array:
+
+```php
+LanguageCodeCollection::all(): array
+```
+
+Get language code from language name:
+
+```php
+LanguageCodeCollection::getCode(string $languageName): string|null
+```
+
+Get language name from language code:
+
+```php
+LanguageCodeCollection::getName(string $languageCode): string|null
 ```
 
 ## Usage
 
 Example of use for this library:
 
-### - Get all language codes as array
-
-[Using objects](#using-objects):
+### Get all language codes as array
 
 ```php
+use Josantonius\LanguageCode\LanguageCode;
+
+$languageCode = new LanguageCode();
+
 $languageCode->all();
 ```
 
-[Using the static collection](#using-static-collection):
-
 ```php
+use Josantonius\LanguageCode\LanguageCodeCollection;
+
 LanguageCodeCollection::all();
 ```
 
@@ -134,31 +152,35 @@ Result:
 ]
 ```
 
-### - Get language code from language name
-
-[Using objects](#using-objects):
+### Get language code from language name
 
 ```php
+use Josantonius\LanguageCode\LanguageCode;
+
+$languageCode = new LanguageCode();
+
 $languageCode->getCode('Spanish'); // es
 ```
 
-[Using the static collection](#using-static-collection):
-
 ```php
+use Josantonius\LanguageCode\LanguageCodeCollection;
+
 LanguageCodeCollection::getCode('Turkish'); // tr
 ```
 
-### - Get language name from language code
-
-[Using objects](#using-objects):
+### Get language name from language code
 
 ```php
+use Josantonius\LanguageCode\LanguageCode;
+
+$languageCode = new LanguageCode();
+
 $languageCode->getName('eo'); // Esperanto
 ```
 
-[Using the static collection](#using-static-collection):
-
 ```php
+use Josantonius\LanguageCode\LanguageCodeCollection;
+
 LanguageCodeCollection::getName('de'); // German
 ```
 
