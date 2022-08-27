@@ -62,56 +62,46 @@ clone https://github.com/josantonius/php-language-code.git
 
 ### Clase LanguageCode
 
-```php
-use Josantonius\LanguageCode\LanguageCode;
-```
-
-Crear objeto:
-
-```php
-$languageCode = new LanguageCode();
-```
+`Josantonius\LanguageCode\LanguageCode`
 
 Obtener array con todos los códigos de idioma:
 
 ```php
-$languageCode->all(): array
+public static function all(): array
 ```
 
 Obtener código de idioma desde el nombre del idioma:
 
 ```php
-$languageCode->getCode(string $languageName): string|null
+public static function getCode(string $languageName): string|null
 ```
 
 Obtener el nombre del idioma desde código de idioma:
 
 ```php
-$languageCode->getName(string $languageCode): string|null
+public static function getName(string $languageCode): string|null
 ```
 
 ### Clase LanguageCodeCollection
 
-```php
-use Josantonius\LanguageCode\LanguageCodeCollection;
-```
+`Josantonius\LanguageCode\LanguageCodeCollection`
 
 Obtener array con todos los códigos de idioma:
 
 ```php
-LanguageCodeCollection::all(): array
+public static function all(): array
 ```
 
 Obtener código de idioma desde el nombre del idioma:
 
 ```php
-LanguageCodeCollection::getCode(string $languageName): string|null
+public static function getCode(string $languageName): string|null
 ```
 
 Obtener el nombre del idioma desde código de idioma:
 
 ```php
-LanguageCodeCollection::getName(string $languageCode): string|null
+public static function getName(string $languageCode): string|null
 ```
 
 ## Uso
@@ -183,6 +173,10 @@ use Josantonius\LanguageCode\LanguageCodeCollection;
 
 LanguageCodeCollection::getName('de'); // German
 ```
+
+## Listado en formato JSON
+
+[Ir al recurso](https://gist.github.com/josantonius/b455e315bc7f790d14b136d61d9ae469).
 
 ## Tests
 
