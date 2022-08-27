@@ -26,7 +26,7 @@ PHP library to get language name from code.
 - [TODO](#todo)
 - [Changelog](#changelog)
 - [Contribution](#contribution)
-- [Sponsor](#Sponsor)
+- [Sponsor](#sponsor)
 - [License](#license)
 
 ---
@@ -62,56 +62,46 @@ clone https://github.com/josantonius/php-language-code.git
 
 ### LanguageCode Class
 
-```php
-use Josantonius\LanguageCode\LanguageCode;
-```
-
-Create object:
-
-```php
-$languageCode = new LanguageCode();
-```
+`Josantonius\LanguageCode\LanguageCode`
 
 Get all language codes as array:
 
 ```php
-$languageCode->all(): array
+public static function all(): array;
 ```
 
 Get language code from language name:
 
 ```php
-$languageCode->getCode(string $languageName): string|null
+public static function getCode(string $languageName): string|null;
 ```
 
 Get language name from language code:
 
 ```php
-$languageCode->getName(string $languageCode): string|null
+public static function getName(string $languageCode): string|null;
 ```
 
 ### LanguageCodeCollection Class
 
-```php
-use Josantonius\LanguageCode\LanguageCodeCollection;
-```
+`Josantonius\LanguageCode\LanguageCodeCollection`
 
 Get all language codes as array:
 
 ```php
-LanguageCodeCollection::all(): array
+public static function all(): array
 ```
 
 Get language code from language name:
 
 ```php
-LanguageCodeCollection::getCode(string $languageName): string|null
+public static function getCode(string $languageName): string|null
 ```
 
 Get language name from language code:
 
 ```php
-LanguageCodeCollection::getName(string $languageCode): string|null
+public static function getName(string $languageCode): string|null
 ```
 
 ## Usage
