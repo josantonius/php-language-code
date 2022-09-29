@@ -33,7 +33,9 @@ Librería PHP para obtener el nombre del lenguaje a partir del código.
 
 ## Requisitos
 
-Esta biblioteca es compatible con las versiones de PHP: 8.0 | 8.1.
+Sistema operativo: Linux | Windows.
+
+Versiones de PHP: 8.0 | 8.1 | 8.2.
 
 ## Instalación
 
